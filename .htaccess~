@@ -1,0 +1,16 @@
+RewriteEngine On
+Options -Indexes
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/admin/adminer.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?p=$1 [L,QSA]
+
+# phpvs start v4
+<Files ~ \.(php|php5|php6|phps|inc|shtml)$>
+SetHandler fcgid-script
+   FcgidWrapper "/fcgi/ploplml/public_html/fcgid-5.6.sh" .php
+
+
+</Files>
+
+# phpvs end v4

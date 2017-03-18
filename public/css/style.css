@@ -1,0 +1,138 @@
+.decorated-list-item {
+    height: 40px;
+    color: #000;
+    padding-right: 0;
+    background: url('../img/bg.jpg') no-repeat right top;
+}
+
+.navbar {
+    background: url("../img/headmenubg.png");
+}
+
+.option {
+    padding: 10px;
+    border: solid 1px #d3d3d3;
+    width: 100%;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.option a {
+    background-color: #d3d3d3;
+    padding: 10px;
+}
+
+body {
+    padding-top: 70px;
+    margin-bottom: 20px;
+}
+
+.order-day img {
+    width: 100%;
+}
+
+.order-day {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 5px solid #337ab7;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.order-day .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.select-option {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.select-option label {
+    width: 50%;
+}
+
+.order-button {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.button-login {
+    width: 100%;
+}
+
+.page_infopage {
+    background: url("https://i.imgur.com/tutZHbk.png") bottom right no-repeat;
+    background-size: 314px 254px;
+}
+
+.spinner input {
+    text-align: right;
+}
+
+.input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+}
+
+.input-group-btn-vertical > .btn:first-child {
+    border-top-right-radius: 4px;
+}
+
+.input-group-btn-vertical > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+}
+
+.input-group-btn-vertical i {
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+.bootstrap-touchspin {
+    width: 70px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.user-manage-option a {
+    color: initial;
+}
+
+.bootstrap-tagsinput input {
+    width: 100%;
+}
+
+.pizza-details-sum {
+    background: 0;
+    border: 0;
+    padding: 0;
+}

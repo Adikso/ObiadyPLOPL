@@ -1,0 +1,4 @@
+config.php
+logs/
+.htaccess
+.gitignore
