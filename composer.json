@@ -8,8 +8,6 @@
     "phpmailer/phpmailer": "*",
     "facebook/graph-sdk" : "~5.0",
     "bkcore/nocsrf": "dev-master",
-    "zeptech/annotations": "1.1.0",
-    "mobiledetect/mobiledetectlib": "2.8.24",
     "maximebf/debugbar": "1.*"
   }
 }
