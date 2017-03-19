@@ -127,8 +127,8 @@ footer {
     color: initial;
 }
 
-.bootstrap-tagsinput input {
-    width: 100%;
+.bootstrap-tagsinput {
+    width: 100% !important;
 }
 
 .pizza-details-sum {
