@@ -57,7 +57,10 @@ $this->insert('base/navbar');
         </div>
 
         <footer class="footer text-muted text-right">
-            <p>&copy; 2017 zambrzycki.net</p>
+            <a href="https://github.com/Adikso/ObiadyPLOPL" class="text-muted">
+                <i class="fa fa-github" aria-hidden="true"></i> Źródło
+            </a>
+            &copy; 2017 zambrzycki.net
         </footer>
 
     </div>
