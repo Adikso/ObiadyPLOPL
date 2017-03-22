@@ -1,6 +1,6 @@
 <?php
-$this->layout('base/main', ['title' => 'Lista klas']);
 $user = $profile['user'];
+$this->layout('base/main', ['title' => 'Profil użytkownika '.$user->getFullName()]);
 ?>
 
 <?php $this->push('scripts') ?>
