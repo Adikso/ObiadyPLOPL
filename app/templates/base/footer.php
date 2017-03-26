@@ -17,7 +17,7 @@
 <?php
 
 if (config('other.google-analytics.enable')) {
-    include_once(LIBRARIES_PATH . "/analyticstracking.php");
+    $this->insert('base/partials/googleanalytics');
 }
 
 if (!is_null(user()) && user()->role === Roles::Admin || Debug::isDebugMode()){
