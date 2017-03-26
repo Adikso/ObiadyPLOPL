@@ -53,7 +53,13 @@ class UserEditorController extends Controller
             $user->classId = Input::get('classesList');
             $user->role = Input::get('rolesList');
             $user->balance = Input::get('inputBalance');
-            $user->icon = Input::get('inputIcon');
+
+            if (Input::isEmpty('inputIcon')){
+                $user->icon = null;
+            }else{
+                $user->icon = Input::get('inputIcon');
+            }
+
         }
 
         if (Input::has('update')) {
