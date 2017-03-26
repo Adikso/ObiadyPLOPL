@@ -26,7 +26,14 @@ class CronController extends Controller
 
         $message = new EmailMessage();
         $message->from(config('mail.username'), config('mail.displayName'));
-        $recipients = $message->to(config('email_orders.recipient'))->bcc(config('mail.username'));
+
+        if (Input::has('target')){
+            $recipients = $message->to(Input::get('target'));
+        }else{
+            $recipients = $message->to(config('email_orders.recipient'));
+        }
+
+        $recipients->bcc(config('mail.username'));
 
         foreach (config('email_orders.bcc') as $bcc_email){
             $recipients->bcc($bcc_email);
