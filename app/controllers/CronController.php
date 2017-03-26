@@ -20,9 +20,18 @@ class CronController extends Controller
 
         $report = OrdersService::generateReport(Input::get('level'));
 
+        if (empty($report)){
+            $report = "Brak zamówień";
+        }
+
         $message = new EmailMessage();
         $message->from(config('mail.username'), config('mail.displayName'));
-        $message->to(config('email_orders.recipient'))->bcc(config('mail.username'));
+        $recipients = $message->to(config('email_orders.recipient'))->bcc(config('mail.username'));
+
+        foreach (config('email_orders.bcc') as $bcc_email){
+            $recipients->bcc($bcc_email);
+        }
+
         $message->html($report);
 
         $nextMonday = date('d', strtotime('next monday'));
@@ -33,6 +42,7 @@ class CronController extends Controller
         $retries = 0;
         while (($status = Email::sendEmail($message)) !== true){
             $retries++;
+            sleep(2);
         }
 
         echo json_encode(['success' => $status, 'retries' => $retries]);
