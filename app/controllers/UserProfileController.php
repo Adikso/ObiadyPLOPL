@@ -231,36 +231,41 @@ class UserProfileController extends Controller
                 $user = User::findByExpression($expression, false);
 
                 if ($user != null) {
-                    $token = new Token();
-                    $token->type = TokenType::PasswordReminder;
-                    $token->devicename = "Przypomnienie hasła";
-                    $token->userId = $user->id;
-                    $authKey = Auth::addAuthKey($token);
 
-                    $message = new EmailMessage();
-                    $message->to($user->email);
-                    $message->from(config('mail.username'), config('general.siteTitle') . ' - Automat');
+                    if (!empty($user->email)) {
+                        $token = new Token();
+                        $token->type = TokenType::PasswordReminder;
+                        $token->devicename = "Przypomnienie hasła";
+                        $token->userId = $user->id;
+                        $authKey = Auth::addAuthKey($token);
 
-                    $message->title(config('general.siteTitle') . ' - Przypomnienie hasła');
-                    $message->text(sprintf(
-                        "Ktoś chce zresetować hasło do twojego konta\n
+                        $message = new EmailMessage();
+                        $message->to($user->email);
+                        $message->from(config('mail.username'), config('general.siteTitle') . ' - Automat');
+
+                        $message->title(config('general.siteTitle') . ' - Przypomnienie hasła');
+                        $message->text(sprintf(
+                            "Ktoś chce zresetować hasło do twojego konta\n
                         Jeżeli to nie ty to zignoruj tą wiadomość\n
                         Odwiedź poniższy link aby zresetować hasło:\n
                         https:%s%s\n\n
                         Twoja nazwa użytkownika: %s\n\n
                         W razie problemów wyślij odpowiedź na tą wiadomość",
 
-                        config('general.baseURL'),
-                        substr(route('user::password::recovery::key',
-                        ['key' => $authKey]), 1), $user->login));
+                            config('general.baseURL'),
+                            substr(route('user::password::recovery::key',
+                                ['key' => $authKey]), 1), $user->login));
 
-                    Log::info("PASSWORD_CHANGE_REQUEST", $user->login);
+                        Log::info("PASSWORD_CHANGE_REQUEST", $user->login);
 
-                    $status = Email::sendEmail($message);
-                    if (!$status) {
-                        Alerts::show(new Alert(AlertType::Danger, 'Nie udało się przypomnieć hasła', 'Email nie mógł zostać wysłany. Spróbuj ponownie!'));
-                    } else {
-                        Alerts::show(new Alert(AlertType::Success, 'Sukces', 'Przypomnienie zostało wysłane na twój adres email'));
+                        $status = Email::sendEmail($message);
+                        if (!$status) {
+                            Alerts::show(new Alert(AlertType::Danger, 'Nie udało się przypomnieć hasła', 'Email nie mógł zostać wysłany. Spróbuj ponownie!'));
+                        } else {
+                            Alerts::show(new Alert(AlertType::Success, 'Sukces', 'Przypomnienie zostało wysłane na twój adres email'));
+                        }
+                    }else{
+                        Alerts::show(new Alert(AlertType::Danger, null, 'Do tego konta nie został powiązany adres email. Skontaktuj się emailowo: '.config('mail.username')));
                     }
 
                 } else {
