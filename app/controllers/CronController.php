@@ -18,7 +18,8 @@ class CronController extends Controller
             die();
         }
 
-        $report = OrdersService::generateReport(Input::get('level'));
+        $nextMonday = date("Y-m-d", strtotime('Next Monday'));
+        $report = OrdersService::generateReport(Input::get('level'), $nextMonday);
 
         if (empty($report)){
             $report = "Brak zamówień";
