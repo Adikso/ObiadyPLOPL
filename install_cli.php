@@ -235,6 +235,20 @@ if (strtolower($continue) !== 'n'){
 
 }
 
+echo "'logs' directory already exists. Skipping..\n";
+if (!is_dir('logs')) {
+    echo "Creating 'logs' directory..\n";
+    if (mkdir('logs', 0770, true)){
+        echo "'logs' directory created\n";
+    }else{
+        echo "Failed to create 'logs' directory. Create it manually\n";
+    }
+}
+
 @$pdo->query("INSERT INTO messages (description, target) VALUES ('System obiadowy został zainstalowany', 'ALL');");
 
 echo "Installation finished!\n";
+
+if (!is_dir('vendor')) {
+    echo "You have to install dependencies using composer after installation\n";
+}
