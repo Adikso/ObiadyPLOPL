@@ -11,7 +11,9 @@ class InfoPageController extends Controller
 
     public function showHelp()
     {
-        echo $this->getTemplates()->render("pages/help");
+        $last_version_details = shell_exec("git log -1 --pretty=format:'%h - %s (%ci)' --abbrev-commit");
+
+        echo $this->getTemplates()->render("pages/help", ['last_version_details' => $last_version_details]);
     }
 
     public function showHistory()

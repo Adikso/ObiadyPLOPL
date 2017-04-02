@@ -24,8 +24,7 @@ $this->layout('base/main', ['title' => 'Kontakt']);
 </div>
 <div class="order-day">
     <ul class="list-group">
-        <li class="list-group-item"><strong>Wersja systemu:</strong> Beta (szukanie bugów) (po przebudowie)</li>
-        <li class="list-group-item"><strong>Data ostatniej aktualizacji:</strong> 27.03.2017</li>
+        <li class="list-group-item"><strong>Wersja systemu:</strong> <?= $last_version_details ?></li>
         <li class="list-group-item"><strong>Autorzy:</strong> Adam Zambrzycki</li>
 
         <li class="list-group-item"><a href="<?= route('systemhistory') ?>">Historia systemu obiadowego</a> </li>
