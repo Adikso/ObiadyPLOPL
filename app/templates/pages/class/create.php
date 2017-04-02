@@ -40,9 +40,10 @@ $this->layout('base/main', ['title' => 'Tworzenie klasy']);
                         <label class="col-sm-2 control-label">Poziom</label>
                         <div class="col-sm-10">
                             <select id="rolesList" name="inputOwner" class="form-control">
-                                <option value="NONE">Nieokreślony</option>
-                                <option value="LICEUM">Liceum</option>
-                                <option value="GIMNAZJUM">Gimnazjum</option>
+                                <option value="">Nieokreślony</option>
+                                <?php foreach ($possible_owners as $owner): ?>
+                                    <option value="<?= $owner ?>"><?= ucfirst(strtolower($owner)) ?></option>
+                                <?php endforeach; ?>
                             </select>
                             <small class="text-muted">Klasa będzie widoczna tylko dla osób zarządzających danym
                                 poziomem

@@ -6,8 +6,14 @@ class ClassCreatorController extends Controller
 
     public function show()
     {
+        $possible_owners = Database::query("SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS
+                          WHERE TABLE_NAME = 'classes' AND COLUMN_NAME = 'owner' LIMIT 1;")->fetch()['COLUMN_TYPE'];
+
+        $possible_owners = explode(',', str_replace("'", '', substr($possible_owners, 5, -1)));
+
         echo $this->getTemplates()->render("pages/class/create",
-            ['created' => false]);
+            ['created' => false,
+                'possible_owners' => $possible_owners]);
     }
 
     public function create()

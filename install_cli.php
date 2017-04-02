@@ -70,7 +70,7 @@ try {
         year INT(11) NOT NULL,
         class VARCHAR(2) NOT NULL,
         email VARCHAR(255) NOT NULL,
-        owner ENUM('LICEUM', 'GIMNAZJUM', 'HIDE') DEFAULT 'LICEUM' NOT NULL
+        owner ENUM('LICEUM', 'GIMNAZJUM') DEFAULT 'LICEUM'
     );
     ");
 
