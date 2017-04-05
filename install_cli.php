@@ -235,7 +235,6 @@ if (strtolower($continue) !== 'n'){
 
 }
 
-echo "'logs' directory already exists. Skipping..\n";
 if (!is_dir('logs')) {
     echo "Creating 'logs' directory..\n";
     if (mkdir('logs', 0770, true)){
@@ -243,6 +242,8 @@ if (!is_dir('logs')) {
     }else{
         echo "Failed to create 'logs' directory. Create it manually\n";
     }
+}else{
+    echo "'logs' directory already exists. Skipping..\n";
 }
 
 @$pdo->query("INSERT INTO messages (description, target) VALUES ('System obiadowy został zainstalowany', 'ALL');");
