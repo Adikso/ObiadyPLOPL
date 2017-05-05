@@ -14,8 +14,8 @@ $this->layout('base/main', ['title' => 'Kontakt']);
         </li>
         <li class="list-group-item"></li>
         <li class="list-group-item"><strong>Ekipa</strong></li>
-        <li class="list-group-item"><a>Adam Zambrzycki</a>
-            (Administrator i twórca systemu)
+        <li class="list-group-item"><a>Krzysztof Adamkiewicz</a>
+            (Administrator systemu)
         </li>
         <li class="list-group-item"><a>Justyna Rudnicka</a> ("Główny
             Zarządca obiadowy")

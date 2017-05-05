@@ -5,7 +5,7 @@ $this->layout('base/main', ['title' => 'Historia systemu']);
 <div class="order-day">
     <ul class="list-group">
         <li class="list-group-item" style="font-weight: bold">2017 - teraz</li>
-        <li class="list-group-item">Administrator: Adam Zambrzycki</li>
+        <li class="list-group-item">Administrator: Krzysztof Adamkiewicz</li>
         <li class="list-group-item">Zarządca obiadów: Justyna Rudnicka</li>
 
         <li class="list-group-item" style="font-weight: bold">2015 - 2017</li>
