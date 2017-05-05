@@ -39,21 +39,12 @@ $this->layout('base/main', ['title' => 'Klasa ' . $class->getName()]);
 
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default user-manage-option">
-                            <a href="<?= route('profile::edit', ['id' => $student->id]) ?>">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                            </a>
-                        </button>
-                        <button type="button" class="btn btn-default user-manage-option">
-                            <a href="/admin/sandbox/loginas/'.$student['id'].'">
-                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                            </a>
-                        </button>
-                        <button type="button" class="btn btn-default user-manage-option">
-                            <a href="<?= route('user::manage::messenger', ['id' => $student->id]) ?>">
-                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                            </a>
-                        </button>
+                        <a href="<?= route('profile::edit', ['id' => $student->id]) ?>" class="btn btn-default user-manage-option">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                        <a href="<?= route('user::manage::messenger', ['id' => $student->id]) ?>" class="btn btn-default user-manage-option">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </a>
                     </div>
                 </td>
                 <?php
@@ -61,11 +52,9 @@ $this->layout('base/main', ['title' => 'Klasa ' . $class->getName()]);
 
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default user-manage-option">
-                            <a href="<?= route('user::manage::messenger', ['id' => $student->id]) ?>">
-                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                            </a>
-                        </button>
+                        <a href="<?= route('user::manage::messenger', ['id' => $student->id]) ?>" class="btn btn-default user-manage-option">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </a>
                     </div>
                 </td>
 

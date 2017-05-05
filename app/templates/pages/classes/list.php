@@ -34,26 +34,18 @@ $this->layout('base/main', ['title' => 'Lista klas']);
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default user-manage-option" title="Edytuj klasę">
-                            <a href="<?= route('class::manage', ['id' => $class->id]) ?>">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                            </a>
-                        </button>
-                        <button type="button" class="btn btn-default user-manage-option" title="Lista zamówień">
-                            <a href="<?= route('class::orders', ['id' => $class->id]) ?>">
-                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                            </a>
-                        </button>
-                        <button type="button" class="btn btn-default user-manage-option" title="Finanse">
-                            <a href="<?= route('class::money', ['id' => $class->id]) ?>">
-                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                            </a>
-                        </button>
-                        <button type="button" class="btn btn-default user-manage-option" title="Wyślij wiadomość">
-                            <a href="<?= route('class::manage::messenger', ['id' => $class->id]) ?>">
-                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                            </a>
-                        </button>
+                        <a href="<?= route('class::manage', ['id' => $class->id]) ?>" class="btn btn-default user-manage-option" title="Edytuj klasę">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                        <a href="<?= route('class::orders', ['id' => $class->id]) ?>" class="btn btn-default user-manage-option" title="Lista zamówień">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <a href="<?= route('class::money', ['id' => $class->id]) ?>" class="btn btn-default user-manage-option" title="Finanse">
+                            <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                        </a>
+                        <a href="<?= route('class::manage::messenger', ['id' => $class->id]) ?>" class="btn btn-default user-manage-option" title="Wyślij wiadomość">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </a>
                     </div>
                 </td>
                 <td>
