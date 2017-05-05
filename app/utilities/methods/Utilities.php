@@ -149,3 +149,13 @@ function insertIf($text, $expression){
 
     return "";
 }
+
+/**
+ * Checks if function exists and is enabled
+ *
+ * @param $func
+ * @return bool
+ */
+function isEnabled($func) {
+    return is_callable($func) && false === stripos(ini_get('disable_functions'), $func);
+}

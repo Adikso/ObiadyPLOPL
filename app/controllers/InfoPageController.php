@@ -11,7 +11,11 @@ class InfoPageController extends Controller
 
     public function showHelp()
     {
-        $last_version_details = shell_exec("git log -1 --pretty=format:'%h - %s (%ci)' --abbrev-commit");
+        if (isEnabled('shell_exec')){
+            $last_version_details = shell_exec("git log -1 --pretty=format:'%h - %s (%ci)' --abbrev-commit");
+        }else{
+            $last_version_details = null;
+        }
 
         echo $this->getTemplates()->render("pages/help", ['last_version_details' => $last_version_details]);
     }
